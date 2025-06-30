@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cromhpwvhf8ms"]
+
+[ext_resource type="Script" uid="uid://d3238bi0fgp2q" path="res://src/puzzleObjects/Box/stable/stableBox.gd" id="1_j0gem"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7w1pn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7w1pn"]
+albedo_color = Color(0, 1, 0.283333, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0gem"]
+
+[node name="StableBox" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 3
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_j0gem")
+lifeTime = 2
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7w1pn")
+surface_material_override/0 = SubResource("StandardMaterial3D_7w1pn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_j0gem")
